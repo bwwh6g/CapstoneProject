@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookRecommender</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bookrecommender/css/recom.css' %}">
+</head>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+   
+
+    jQuery(document).ready(function(){
+        jQuery('.rating').click(function(){
+            jQuery('.dia').css("opacity",1);
+
+            jQuery('.ok').attr('disabled',false);
+        })
+        jQuery('.ok').click(function(){
+            jQuery('.dia_2').css("opacity",1);
+        })
+
+
+        
+        
+    })
+
+
+</script>
+
+
+<body>
+    <nav id="navbar">
+        <a href="logout" class="btn recom log">Logout</a>
+        <a href="getRatingPage" class="btn recom">Rate Book</a>
+        <a href="getRecom?type=0" class="btn recom">Get Recommendation</a>
+    </nav>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <header class="head">
+
+            <span><div class="text_small" >Recommendation Book</div> </span>
+
+            </header> 
+
+            <div class="box" >
+
+                <div class="section_right dia_2">
+                    
+                    <div><hr size="2px" noshade="true" color="e3dfdf"></div>
+
+                    <div class="show">
+                        <div class="cover">
+                            <img src="{{ book.img_m }}" height="auto" width="350%" alt="CANNOT OBTAIN COVER PAGE INFORMATION">
+                        </div>
+
+                        <table style="padding-left: 3%; width:50%">
+
+                            <tr>
+                                <td><p class="word">Isbn:</p></td>
+                                <td><output name=""> {{book.isbn}}</output></td>
+                            </tr>
+                            <tr>
+                                <td> <p class="word">Name:</p> </td>
+                                <td><output name="">{{book.book_title}}</output></td>
+                            </tr>
+                            <tr>
+                                <td><p class="word">Author:</p></td>
+                                <td><output name="">{{book.book_author}}</output></td>
+                            </tr>
+                            <tr>
+                                <td><p class="word">Publisher:</p></td>
+                                <td><output name="">{{book.publisher}}</output></td>
+                            </tr>
+                            <tr>
+                                <td><p class="word">Year:</p></td>
+                                <td><output name="">{{book.year_of_publication}}</output></td>
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+                    <div><hr size="2px" noshade="true" color="e3dfdf"></div>
+                    <div class="text">
+                        <div style="float:right"><a class="left side" style="color:maroon" href="getRecom?type=2">More Recommendations</a></div>
+
+                    </div>
+
+                </div>
+
+                
+            </div>
+            <div class="footer-area">
+        			<p class="cpt">&copy; Copyright -BookRecommender- | Design by Group 8</p>
+    			</div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookRecommender</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bookrecommender/css/recom1.css' %}">
+</head>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+   
+
+    jQuery(document).ready(function(){
+        jQuery('.rating').click(function(){
+            jQuery('.dia').css("opacity",1);
+            jQuery('.ok').attr('disabled',false);
+        })
+        jQuery('.ok').click(function(){
+            jQuery('.dia_2').css("opacity",1);
+        })
+    })
+
+
+</script>
+
+
+<body>
+    <nav id="navbar">
+        <a href="logout" class="btn recom log">Logout</a>
+        <a href="getRatingPage" class="btn recom">Rate Book</a>
+        <a href="getRecom?type=0" class="btn recom">Get Recommendation</a>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <header class="head">
+
+            <span><div class="text_small" >MORE RECOMMENDATION</div> </span>
+
+            </header> 
+
+            <div class="box">
+
+
+                <div class="section_right dia_2">
+                    <div class="text">
+                    
+                    <div><hr size="2px" noshade="true" color="e3dfdf"></div>
+                   
+                    <div class="show">
+                        <div class="showw">
+                            <img src="{{ book1.img_m }}" height="50%" width="60%" align="middle" alt="Cannot Obtain Cover Page Information">
+                            <p>{{book1.book_title}}</p>
+                            <p>{{book1.book_author}}</p>
+                            <p>{{book1.isbn}}</p>
+                        </div>
+                        <div class="showw">
+                            <img src="{{ book2.img_m }}" height="50%" width="60%" align="middle" alt="Cannot Obtain Cover Page Information">
+                            <p>{{book2.book_title}}</p>
+                            <p>{{book2.book_author}}</p>
+                            <p>{{book2.isbn}}</p>
+                        </div>
+                        <div class="showw">
+                            <img src="{{ book3.img_m }}" height="50%" width="60%" align="middle" alt="Cannot Obtain Cover Page Information">
+                            <p>{{book3.book_title}}</p>
+                            <p>{{book3.book_author}}</p>
+                            <p>{{book3.isbn}}</p>
+                        </div>
+                       
+
+                    </div>
+    
+                        <div style="float:right"><a style="color:maroon" href="getRecom?type=1">Go Back</a></div>
+
+                    </div>
+                    <div style="padding-top: 2%"><hr size="2px" noshade="true" color="e3dfdf" ></div>
+                    
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-area">
+        <p class="cpt">&copy; Copyright -BookRecommender- | Design by Group 8</p>
+    </div>
+</body>
+</html>
